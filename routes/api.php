@@ -23,6 +23,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/colors/{company}', [UserController::class, 'getColorCompany']);
+
 Route::apiResources([
     'user' => UserController::class,
     'company' => CompanyController::class,
@@ -30,5 +32,3 @@ Route::apiResources([
     'color' => ColorController::class,
     'usercolor' => UsercolorController::class
 ]);
-
-Route::get('/colorS/{company}', [UserController::class, 'getColorCompany']);
