@@ -25,6 +25,7 @@ class ColorController extends Controller
                         ->where('desc', '=', $company);
         $color = DB::table('colors')
                     ->where('company_id', '=', $companies->id);
+                    
         return $color;
     }
 
