@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ColorResource;
 use Illuminate\Http\Request;
 use App\Models\Color;
+use App\Models\Company;
 use Illuminate\Support\Facades\DB;
 
 
@@ -21,8 +22,7 @@ class ColorController extends Controller
     }
 
     public function getColorCompany($company){
-        $companies = DB::table('companys')
-                        ->where('desc', '=', $company);/*
+        $companies = Company::where('desc', '=', $company);/*
         if ($companies) {
             $color = DB::table('colors')
                         ->where('company_id', '=', $companies->id);
