@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Resources\ColorResource;
 use Illuminate\Http\Request;
 use App\Models\Color;
+use Illuminate\Support\Facades\DB;
+
 
 class ColorController extends Controller
 {
@@ -16,6 +18,14 @@ class ColorController extends Controller
     public function show($id) {
         $color = Color::findOrFaill($id);
         return new ColorResource($color);
+    }
+
+    public function getColorCompany($company){
+        $companies = DB::table('companys')
+                        ->where('desc', '=', $company);
+        $color = DB::table('colors')
+                    ->where('company_id', '=', $companies->id);
+        return $color;
     }
 
     public function store(Request $request) {
