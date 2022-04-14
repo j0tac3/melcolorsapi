@@ -28,7 +28,7 @@ class ColorController extends Controller
                                 ->get();
         $color = Color::where('company_id', '=', $companySelected)
                     ->get();
-        return $companySelected;
+        return $color;
     }
 
     public function store(Request $request) {
