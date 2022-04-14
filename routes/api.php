@@ -30,3 +30,5 @@ Route::apiResources([
     'color' => ColorController::class,
     'usercolor' => UsercolorController::class
 ]);
+
+Route::get('/color/{company}', [UserController::class, 'getColorCompany']);
