@@ -23,16 +23,10 @@ class ColorController extends Controller
 
     public function getColorCompany($company){
         $companies = Company::where('desc', '=', $company)
-                                ->get();/*
-        if ($companies) {
-            $color = DB::table('colors')
-                        ->where('company_id', '=', $companies->id);
-            return $color;
-        } else{
-            return $company;
-        } */
-        return $companies;
-
+                                ->get();
+        $color = Color::where('company_id', '=', $companies->id)
+                    ->get();
+        return $color;
     }
 
     public function store(Request $request) {
