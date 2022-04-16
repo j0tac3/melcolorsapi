@@ -31,7 +31,8 @@ class ColorController extends Controller
         } else {
             $colors = DB::table('colors')
                                     ->where('company_id', $companySelected[0]->id)
-                                    ->get();
+                                    ->get()
+                                    ->paginate(10);
         }
         return ColorResource::collection($colors);
     }
