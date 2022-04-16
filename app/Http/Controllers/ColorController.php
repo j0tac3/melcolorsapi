@@ -27,7 +27,7 @@ class ColorController extends Controller
                                 ->where('short_desc', $company)
                                 ->get();
         if (!count($companySelected)){
-            $colors = [];
+            $colors = new ColorResource([]);
         } else {
             $colors = Color::where('company_id', $companySelected[0]->id)
                                     ->paginate(10);
