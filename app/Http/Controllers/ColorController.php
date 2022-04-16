@@ -23,14 +23,14 @@ class ColorController extends Controller
 
     public function getColorCompany($company){
         $companySelected = Company::where('short_desc', $company);
-        if (!count($companySelected)){
+        /* if (!count($companySelected)){
             $colors = [];
         } else {
             $colors = Color::where('company_id', $companySelected[0]->id)
                             ->paginate(10);
             $colors = ColorResource::collection($colors);
-        }
-        return $colors;
+        } */
+        return $companySelected;
     }
 
     public function store(Request $request) {
