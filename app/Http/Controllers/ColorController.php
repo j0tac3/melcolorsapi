@@ -32,9 +32,8 @@ class ColorController extends Controller
             $colors = DB::table('colors')
                                     ->where('company_id', $companySelected[0]->id)
                                     ->get();
-            //$colors = 'patata';
         }
-        return $colors;
+        return ColorResource::collection($colors);
     }
 
     public function store(Request $request) {
