@@ -33,7 +33,7 @@ class ColorController extends Controller
                                     ->where('company_id', $companySelected[0]->id)
                                     ->get();
         }
-        return $colors;
+        return ColorResource::collection($colors);
     }
 
     public function store(Request $request) {
