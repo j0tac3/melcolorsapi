@@ -34,7 +34,7 @@ class ColorController extends Controller
                                     ->get(); */
             $colors = 'patata';
         }
-        return new ColorResource($colors);
+        return $colors;
     }
 
     public function store(Request $request) {
