@@ -26,7 +26,7 @@ class ColorController extends Controller
                                 ->select('id')
                                 ->where('short_desc', $company)
                                 ->get();
-        if (!$companySelected->empty()){
+        if ($companySelected[0]->empty()){
             $colors = [];
         } else {
             $colors = DB::table('colors')
