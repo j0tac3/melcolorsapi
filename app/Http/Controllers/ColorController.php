@@ -29,9 +29,10 @@ class ColorController extends Controller
         if (!count($companySelected)){
             $colors = [];
         } else {
-            $colors = DB::table('colors')
+            /* $colors = DB::table('colors')
                                     ->where('company_id', $companySelected[0]->id)
-                                    ->get();
+                                    ->get(); */
+            $colors = 'patata';
         }
         return new ColorResource($colors);
     }
