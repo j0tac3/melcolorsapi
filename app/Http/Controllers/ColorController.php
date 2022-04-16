@@ -26,12 +26,12 @@ class ColorController extends Controller
                                 ->select('id')
                                 ->where('short_desc', $company)
                                 ->get();
-        if ($companySelected[0]->id > 0){
+        if (is_null($companySelected)){
+            $colors = [];
+        } else {
             $colors = DB::table('colors')
                                     ->where('company_id', $companySelected[0]->id)
                                     ->get();
-        } else {
-            $colors = [];
         }
         return ColorResource::collection($colors);
     }
