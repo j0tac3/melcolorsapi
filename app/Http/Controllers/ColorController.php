@@ -22,15 +22,17 @@ class ColorController extends Controller
     }
 
     public function getColorCompany($company){
-        $companySelected = Company::where('short_desc', $company);
-        /* if (!count($companySelected)){
+        $companySelected = DB::table('companys')
+                                ->select('id')
+                                ->where('short_desc', $company)
+                                ->get();
+        if (!count($companySelected)){
             $colors = [];
         } else {
             $colors = Color::where('company_id', $companySelected[0]->id)
-                            ->paginate(10);
-            $colors = ColorResource::collection($colors);
-        } */
-        return $companySelected;
+                                    ->paginate(10);
+        }
+        return $colors;
     }
 
     public function store(Request $request) {
