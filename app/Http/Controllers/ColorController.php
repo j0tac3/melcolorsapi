@@ -26,8 +26,6 @@ class ColorController extends Controller
                                 ->select('id')
                                 ->where('desc', $company)
                                 ->get();
-        $color = Color::where('company_id', '=', $companySelected)
-                    ->get();
         return $companySelected;
     }
 
