@@ -30,7 +30,6 @@ class ColorController extends Controller
             $colors = [];
         } else {
             $colors = Color::where('company_id', $companySelected[0]->id)
-                                    ->get()
                                     ->paginate(10);
         }
         return $colors;
