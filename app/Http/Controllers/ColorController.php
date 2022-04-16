@@ -29,7 +29,7 @@ class ColorController extends Controller
         /* $colors = DB::table('colors')
                                 ->where('company_id', $companySelected->id)
                                 ->get(); */
-        return $companySelected;
+        return $companySelected[0]->id;
     }
 
     public function store(Request $request) {
