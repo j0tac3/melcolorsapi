@@ -32,7 +32,7 @@ class ColorController extends Controller
             $colors = Color::where('company_id', $companySelected[0]->id)
                                     ->paginate(10);
         }
-        return $colors;
+        return ColorResource::collection($color);
     }
 
     public function store(Request $request) {
