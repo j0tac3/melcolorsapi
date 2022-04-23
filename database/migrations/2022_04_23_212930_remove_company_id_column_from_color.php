@@ -14,7 +14,7 @@ class RemoveCompanyIdColumnFromColor extends Migration
     public function up()
     {
         Schema::table('colors', function (Blueprint $table) {
-            if (Schema::hasColumn('company_id')){
+            if (Schema::hasColumn('colors','company_id')){
                 $table->dropColumn('company_id');
             }
         });
