@@ -14,7 +14,7 @@ class AddCompanyIdToCategory extends Migration
     public function up()
     {
         Schema::table('categorys', function (Blueprint $table) {
-            $table->unsignedBigInteger('company_id');
+            $table->unsignedBigInteger('company_id')->nullable();
             $table->foreign('company_id')
                     ->references('id')
                     ->on('companys')
