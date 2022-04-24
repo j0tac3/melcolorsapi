@@ -16,8 +16,8 @@ class ColorResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'company_id' => $this->category->company_id,
-            'category_id' => $this->category_id->desc,
+            //'company_id' => $this->category->company_id,
+            'category_id' => $this->category->desc,
             'code' => $this->code,
             'desc_en' => $this->desc_en,
             'desc_es' => $this->desc_es,
