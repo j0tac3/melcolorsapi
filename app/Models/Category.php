@@ -19,4 +19,8 @@ class Category extends Model
     public function color(){
         return $this->hasMany(Color::class);
     }
+
+    public function company(){
+        return $this->belongsTo(Company::class);
+    }
 }

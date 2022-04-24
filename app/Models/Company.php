@@ -16,7 +16,7 @@ class Company extends Model
 
     protected $table = 'companys';
 
-    public function colors(){
-        return $this->hasMany(Color::class);
+    public function category(){
+        return $this->hasMany(Category::class);
     }
 }
