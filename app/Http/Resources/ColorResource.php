@@ -16,12 +16,12 @@ class ColorResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'company_id' => $this->company_id,
-            'category_id' => $this->category_id,
+            'company_id' => $this->category->company_id,
+            'category_id' => $this->category_id->desc,
             'code' => $this->code,
             'desc_en' => $this->desc_en,
             'desc_es' => $this->desc_es,
-            'hex_code' => $this->hex_code,
+            'hex_code' => $this->hex_code, 
 
             'created_at' => $this->created_at->diffForHumans(),
             'updated_at' => $this->updated_at->diffForHumans(),
